@@ -1,34 +1,39 @@
-# minecraft_remote_samples / Naohiro2g
-
-Minecraft Remote（マイクラリモコン）のAPIを使いPythonでユーザーコードを書く出発点
-***
-このドキュメントは、Reveal.jsに対応しています。
+# minecraft_remote_samples / haruta0918
+発表会スライド
 
 --
 
-## このリポジトリの内容
+## このリポジトリで作りたい内容
 
-Python環境をゼロから構築、コードを書いてマイクラ世界に自動建築するまでのガイド。Pythonがすでに動いている人は最短距離で。
-
-Python入門、Python開発入門として利用可能。
+scratch1.0とpython、マイクラ世界での連携
 
 --
+
+
+##　具体的な連携内容 
+scratchとpython環境を連携する gamepad4scratch
+pythonとマイクラ世界を連携する mc-remote_samples
+この二つを連携させて、scratchで作ったゲームをマイクラ世界で表示できるようにする
 
 ### README（このファイル）
-  - マイクラリモコンの概要
-  - 箱庭サーバーの利用方法
-  - Python環境準備とデモコードの実行
-  - Jupyter環境の準備
+  - 具体的な使い方
+  - コードの説明
+
 
 --
 
-### Jupyter Notebookファイル
-  - demo_00_ja.ipynb
-    - マイクラリモコン入門
-  - demo_01_ja.ipynb
-    - 「マイクラ課題」演習
+### 具体的な使い方
+ 
 
----
+--
+
+
+
+### コードの説明
+-お試し
+ <img src="https://github.com/haruta0918/mc_remote_samples/blob/main/images/himeji-castle_new_01_005.jpg" width="900" alt="Minecraft Remote World" title="Minecraft Remote World" />
+
+--
 
 PythonコーディングでMinecraft世界に自動建築ができます。
 [Minecraft Remote（`McRemote`）プラグイン](https://github.com/Naohiro2g/McRemote)をインストールした[PaperMC](https://papermc.io/)サーバーが必要です。
