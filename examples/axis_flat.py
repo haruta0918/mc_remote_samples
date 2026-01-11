@@ -59,8 +59,8 @@ def reset_minecraft_world(mc, width=48):
     sleep(2)
     mc.setBlocks(-width, param.Y_SEA + 1, -width, width, param.Y_SEA + 31, width, block.AIR)
     sleep(3)
-    mc.setBlocks(-width, param.Y_SEA, -width, width, param.Y_SEA, width, block.GRASS_BLOCK)
-    sleep(1)
+    mc.setBlocks(-width, param.Y_SEA, -width, width, param.Y_SEA, width, block.BLACK_CONCRETE)
+    sleep(1) 
 
 
 if __name__ == "__main__":
