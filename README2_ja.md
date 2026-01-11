@@ -30,7 +30,8 @@ pythonとマイクラ世界を連携する mc-remote_samples
 
 
 ### コードの説明
--お試し
+  お試し
+  
  <img src="https://github.com/haruta0918/mc_remote_samples/blob/main/images/himeji-castle_new_01_005.jpg" width="900" alt="Minecraft Remote World" title="Minecraft Remote World" />
 
 --
