@@ -3,9 +3,19 @@ import param_mc_remote as param
 from param_mc_remote import PLAYER_ORIGIN as PO
 from param_mc_remote import block
 from litemapy import Schematic, Region, BlockState
+from litemapy import Schematic
+
+mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
+mc.setPlayer(param.PLAYER_NAME, PO.x, PO.y, PO.z)
+  
 file_path = "C:\\Users\\harut\\AppData\\Roaming\\ModrinthApp\\profiles\\EarthMC (1)\\schematics\ファンタジー建築１.litematic"
 schem = Schematic.load(file_path)
-print(f"サイズ: 幅={schem.width}, 高さ={schem.height}, 奥行き={schem.length}")
+
+for region in schem.regions.values():
+    block = region.getblock(6,0,7)  
+    print("ブロック")
+    print(block.id)
+# print(f"サイズ: 幅={schem.width}, 高さ={schem.height}, 奥行き={schem.length}")
 # Create the block state we are going to use
 block = BlockState("minecraft:light_blue_concrete")
 reg = Region(0, 0, 0, 21, 21, 21)
@@ -19,11 +29,18 @@ schem.save("planet.litematic")
 # Load the schematic and get its first region
 schem = Schematic.load("planet.litematic")
 reg = list(schem.regions.values())[0]
-
 # Print out the basic shape
-for x in reg.xrange():
-    for z in reg.zrange():
-        b = reg[x, 10, z]
-        print(b.id)
+x=0
+y=0
+z=0
+for x in range(schem.width):
+    for y in range(schem.height):
+        for z in range(schem.length):
+            block = region.getblock(x,y,z) 
+            print(block.id)
+            mc.setBlock(x, y, z, block.id)
+            
+
+               
 
         
