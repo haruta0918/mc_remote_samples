@@ -1,39 +1,53 @@
-# minecraft_remote_samples / Naohiro2g
+# Litematica自動建築/ haruta0918
 
-Minecraft Remote（マイクラリモコン）のAPIを使いPythonでユーザーコードを書く出発点
-***
-このドキュメントは、Reveal.jsに対応しています。
 
+中間発表用プレゼンテーション
 --
 
 ## このリポジトリの内容
-
-Python環境をゼロから構築、コードを書いてマイクラ世界に自動建築するまでのガイド。Pythonがすでに動いている人は最短距離で。
-
-Python入門、Python開発入門として利用可能。
-
+Litematicaから.litematicファイルを読み込み
+自動で建築するAPIを作る
+API名automtic architecture(仮)
 --
 
-### README（このファイル）
-  - マイクラリモコンの概要
-  - 箱庭サーバーの利用方法
-  - Python環境準備とデモコードの実行
-  - Jupyter環境の準備
+### Litematica自動建築について
+（なぜ必要なのか）
+  Litematicaファイルから建築する方法はほかにもある
+　　　　　　　　　　　　　　　　　　　　　(WorldEditに.litematicファイルを入れてpasteする)
 
+→手間がかかりすぎる(もっと手軽に使いたい)
 --
 
-### Jupyter Notebookファイル
-  - demo_00_ja.ipynb
-    - マイクラリモコン入門
-  - demo_01_ja.ipynb
-    - 「マイクラ課題」演習
+
+### Litematica自動建築の詳しい説明
+litemapyという、pythonで.litematicファイルを読み込めるものを使う
+
+①litematicファイルをpythonで読み込む
+
+②litematicファイルに書かれている順番で、mc-remoteを使用し、マイクラ世界に出力する
+
+---
+
+
+### 現在の進捗
+litemapyを使い.litematicファイルからブロックを読み込む
+
+→0,0,0のブロックは、できた(出力も可能)　　　　
+ただ、それ以外の座標はインデックスエラーが出た
+
+<img src="images/スクリーンショット 2026-02-08 103008.png" width="1000" alt="Minecraft Remote World" title="Minecraft Remote World" />
+
+
+
+
+
 
 ---
 
 PythonコーディングでMinecraft世界に自動建築ができます。
 [Minecraft Remote（`McRemote`）プラグイン](https://github.com/Naohiro2g/McRemote)をインストールした[PaperMC](https://papermc.io/)サーバーが必要です。
 
-<img src="https://raw.githubusercontent.com/Naohiro2g/minecraft-remote-api/refs/heads/main/images/mc-remote.png" width="320" alt="Minecraft Remote World" title="Minecraft Remote World" />
+<img src="images/himeji-castle_new_01_005.jpg" width="320" alt="Minecraft Remote World" title="Minecraft Remote World" />
 
 ご心配なく。箱庭（サンドボックス）サーバーを利用して、今すぐ、始められます。
 
@@ -163,6 +177,7 @@ Python 3.10から3.12があるなら、以下の要領で。
 ```bash
 # パッケージをインストール／更新
 pip install minecraft-remote-api -U
+python -m pip install litemapy
 
 # examples/param_mc_remote.pyを編集して、自分のプレイヤー名に変更。
 # PLAYER_NAME = "PLAYER_NAME"
