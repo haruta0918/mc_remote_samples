@@ -7,7 +7,7 @@
 ## このリポジトリの内容
 Litematicaから.litematicファイルを読み込み
 自動で建築するAPIを作る
-API名automtic architecture(仮)
+API名 (仮)
 --
 
 ### Litematica自動建築について
