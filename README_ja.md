@@ -72,6 +72,11 @@ litemapyを使い.litematicファイルからブロックを読み込む
 
 ---
 
+
+### Thanks for listening!! 
+![alt text](images/ed6e1296bccb01351ad1074c9c9d09be_t.jpeg)
+---
+
 PythonコーディングでMinecraft世界に自動建築ができます。
 [Minecraft Remote（`McRemote`）プラグイン](https://github.com/Naohiro2g/McRemote)をインストールした[PaperMC](https://papermc.io/)サーバーが必要です。
 
