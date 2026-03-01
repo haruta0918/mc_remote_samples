@@ -4,18 +4,19 @@
 中間発表用プレゼンテーション
 --
 
-## このリポジトリの内容
+## automatic architectureとは
 Litematicaから.litematicファイルを読み込み
 自動で建築するAPIを作る
-API名 (仮)
 --
 
-### Litematica自動建築について
+### automatic architectureの必要性
 （なぜ必要なのか）
   Litematicaファイルから建築する方法はほかにもある
 　　　　　　　　　　　　　　　　　　　　　(WorldEditに.litematicファイルを入れてpasteする)
 
 →手間がかかりすぎる(もっと手軽に使いたい)
+ 
+ サバイバル系のサーバーだと、wolrdEditを使えない
 --
 
 
@@ -29,17 +30,44 @@ litemapyという、pythonで.litematicファイルを読み込めるものを�
 ---
 
 
+### automatic architectureのカスタマイズ(API)のポイント
+・サイズの変更
+・ブロックの置き換え
+・ファイルの切り替え
+---
+
+
+
+
+### automatic architectureのメリット
+・建築の確認
+・ブロックの置き換え
+・建築のサイズ変更
+---
+
+
 ### 現在の進捗
 litemapyを使い.litematicファイルからブロックを読み込む
 
-→0,0,0のブロックは、できた(出力も可能)　　　　
-ただ、それ以外の座標はインデックスエラーが出た
-
-<img src="images/スクリーンショット 2026-02-08 103008.png" width="1000" alt="Minecraft Remote World" title="Minecraft Remote World" />
-
-
+すべてを読み込むことができた(出力も可能)
+　　　サイズ変更→成功　　　
+<video controls src="images/testvideo.mp4" title="Title"></video>
+---
 
 
+### サイズ変更後
+<video controls src="images/samplevideo.mp4" title="images/スクリーンショット 2026-02-08 103008.png"></video>"
+---
+
+### サイズ比較
+<img src="images/スクリーンショット 2026-03-01 093524.png" width="500" alt="Minecraft Remote World" title="Minecraft Remote World" />
+<img src="images/スクリーンショット 2026-03-01 093549.png" width="500" alt="Minecraft Remote World" title="Minecraft Remote World" />
+---
+
+### 今後の課題
+ サイズ変更がコードからしか変更できない
+
+<img src="images/image.png" width="700" alt="Minecraft Remote World" title="Minecraft Remote World" />
 
 
 ---
