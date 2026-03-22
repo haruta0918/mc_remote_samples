@@ -88,7 +88,7 @@ PLAYER_NAME = "PLAYER_NAME"  # set your player name in Minecraft
 
 PLAYER_ORIGIN = Vec3(2000, 0, 2000)  # PO.x, PO.y, PO.z
 
-ADRS_MCR = "mc-remote.xgames.jp"  # mc-remote sandbox server
+ADRS_MCR = "sb.mc-remote.com"  # mc-remote sandbox server
 PORT_MCR = 25575  # socket server port
 ```
 
