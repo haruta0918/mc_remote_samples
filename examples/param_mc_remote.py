@@ -6,7 +6,7 @@ import mc_remote.entity_id as entity
 import mc_remote.particle_id as particle
 
 
-PLAYER_NAME = "haru_3119"  # set your player name in Minecraft
+PLAYER_NAME = "PlayerName"  # set your player name in Minecraft
 PLAYER_ORIGIN = Vec3(2200,0,2100)  # PO.x, PO.y, PO.z
 print(f"param_mc_remote loaded for {PLAYER_NAME} at {PLAYER_ORIGIN.x}, {PLAYER_ORIGIN.y}, {PLAYER_ORIGIN.z}")
 

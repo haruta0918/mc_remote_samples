@@ -6,12 +6,13 @@ authors = [
     {name = "Naohiro2g",email = "587586+Naohiro2g@users.noreply.github.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10, <4.0"
 dependencies = [
     "minecraft-remote-api (>=1214.10.1,<1215.0.0)",
     "pygame-ce (>=2.5.3,<3.0.0)",
     "ipykernel (>=6.29.5,<7.0.0)",
-    "matplotlib (>=3.10.1,<4.0.0)"
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "litemapy (>=0.11.0b0,<0.12.0)"
 ]
 
 [tool.poetry]
