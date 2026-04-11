@@ -11,7 +11,7 @@ from param_mc_remote import block
 mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
 mc.setPlayer(param.PLAYER_NAME, PO.x, PO.y, PO.z)
 
-mc.postToChat("LITEMAPY!!")
+mc.postToChat("LITEMAPY!!") 
 
 
 # file_name = "sample.litematic"
@@ -24,30 +24,30 @@ schem = Schematic.load(file_name)
 reg = list(schem.regions.values())[0]
 size = 1 
 # x2, y2, z2 とかも、sizeと同期させる
-x1, y1, z1 = 0, 0, 0
-x2, y2, z2 = 0, 0, 0
+X1, Y1, Z1 = 0, 0, 0
+X2, Y2, Z2 = 0, 0, 0
 # Print out the basic shape
 for z in reg.zrange():
-    x1, y1, z1 = 0, 0, 0
-    z2+=size  
+    X1, Y1, Z1 = 0, 0, 0
+    Z2+=size  
     for y in reversed(list(reg.yrange())):
-        y2-=size
-        for x in reg.xrange():
+        Y2-=size
+        for x in reg.xrange(): 
             b = reg.getblock(x, y, z)
-            x1=0
-            x2+=size
+            X1=0
+            X2+=size
             for i in range(size):
-                y1=0
+                Y1=0
                 for i in range(size):
-                    z1=0
+                    Z1=0
                     for i in range(size): 
-                        mc.setBlock(x1+x2, Y0 +y1+y2,z1+z2, b.id)
-                        print(x1+x2, Y0 +y1+y2,z1+z2, b.id)
+                        mc.setBlock(X1+X2, Y0 +Y1+Y2,Z1+Z2, b.id)
+                        print(X1+X2, Y0 +Y1+Y2,Z1+Z2, b.id)
                         sleep(0.01)
-                        z1 +=1  
-                    y1 +=1
-                x1 +=1
-        x2=0
-    y2=0                
+                        Z1 +=1  
+                    Y1 +=1
+                X1 +=1
+        X2=0
+    Y2=0                
 
 
