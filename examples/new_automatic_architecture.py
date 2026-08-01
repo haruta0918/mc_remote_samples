@@ -9,9 +9,12 @@ import param_mc_remote as param
 from param_mc_remote import PLAYER_ORIGIN as PO
 from param_mc_remote import block
 from time import sleep
+from litemapy import Schematic, Region, BlockState
 mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
 mc.setPlayer(param.PLAYER_NAME, PO.x, PO.y, PO.z)
 pygame.init()
+
+
 
 WHITE = (250, 250, 250)
 BLUE = (100, 100, 255)
@@ -176,6 +179,7 @@ signup3lcd.update_col(col=2, code=46)
 signup3lcd.update_col(col=3, code=53)
 signup3lcd.update_col(col=5, code=60)
 signup3lcd.update_col(col=6, code=55)
+l=0
 #12=!,13=?,14=A,15=B,16=C,17=D,18=E,19=F,20=G,21=H,22=I,23=J,24=K
 #25=L,26=M,27=N,28=O,29=P,30=Q,31=R,32=S,33=T,34=U,35=V,36=W,37=X
 #38=Y,39=Z,40=a,41=b,42=c,43=d,44=e,45=f,46=g,47=h,48=i,49=j,50=k
@@ -406,326 +410,40 @@ while running:
                 air = 1
 
         if mouse_x > 700 and mouse_x < 1100 and mouse_y > 460 and mouse_y < 560:
-            if scale == 1:
-                if sakusei == 0:
-                    x = mazix
-                    y = maziy
-                    z = maziz
-
-                    ## 扇風機 scale 1
-                    if air == 1:
-                        x += 2
-                        for _i in range(3):
-                            for _i in range(7):
-                                for _i in range(9):
-                                    mc.setBlock(x, y, z, block.AIR)
-                                    y += 1
-                                y -= 9
-                                x -= 1
-                            x += 7
-                            z += 1
-                        z -= 3
-                        x -= 2
-                    
-                    for _i in range(3):
-                        for _i in range(3):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            z += 1
-                        x -= 1
-                        z -= 3
-                    x += 2
-                    z += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    y -= 1
-                    x += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                    y += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x -= 1
-                    y += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x += 1
-                    y += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                    y -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    y -= 1
-                    x += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y -= 1
-                    x -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    z += 1
-                    x -= 2
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x += 2
-                    y -= 3
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                    x += 2
-                    y += 1
-                    for _i in range(3):
-                        for _i in range(3):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            x += 1
-                        y -= 1
-                        x -= 3
-                    z -= 1
-                    x += 1
-                    y += 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        y += 1
-                    y -= 2
-                    x -= 1
-                    for _i in range(3):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        x += 1
-                    sakusei = 1    
-
-            if scale == 2:
-                if sakusei == 0:
-                    x = mazix
-                    y = maziy
-                    z = maziz
-
-                    ## 扇風機 scale 2
-                    if air == 1:
-                        x += 2
-                        for _i in range(5):
-                            for _i in range(9):
-                                for _i in range(14):
-                                    mc.setBlock(x, y, z, block.AIR)
-                                    y += 1
-                                y -= 14
-                                x -= 1
-                            x += 9
-                            z += 1
-                        z -= 5
-                        x -= 2
-
-                    for _i in range(5):
-                        for _i in range(5):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            z += 1
-                        x -= 1
-                        z -= 5
-                    y += 1
-                    x += 4
-                    z += 1
-                    for _i in range(3):
-                        for _i in range(3):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            z += 1
-                        x -= 1
-                        z -= 3
-                    y += 1
-                    x += 2
-                    z += 1
-                    for _i in range(4):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    y -= 1
-                    x -= 2
-                    for _i in range(5):
-                         mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                         x += 1
-                    y += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    y += 1
-                    x += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x -= 1
-                    y += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                    y -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    y -= 1
-                    x -= 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y -= 1
-                    x += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    y += 3
-                    z += 1
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                    x -= 4
-                    y += 3
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y -= 1
-                    x += 2
-                    y += 2
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                        y += 1
-                    y -= 5
-                    x += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                        y += 1
-                    x -= 3
-                    z -= 1
-                    y -= 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        y -= 1
-                    x += 2
-                    y += 3
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        x -= 1
-                    sakusei = 1  
-
-            if scale == 3:
-                if sakusei == 0:
-                    x = mazix
-                    y = maziy
-                    z = maziz
-
-                    ## 扇風機 scale 3
-                    if air == 1:
-                        x += 2
-                        for _i in range(7):
-                            for _i in range(11):
-                                for _i in range(19):
-                                    mc.setBlock(x, y, z, block.AIR)
-                                    y += 1
-                                y -= 19
-                                x -= 1
-                            x += 11
-                            z += 1
-                        z -= 7
-                        x -= 2
-                    
-                    for _i in range(7):
-                        for _i in range(7):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            x -= 1
-                        x += 7
-                        z += 1
-                    z -= 2
-                    x -= 1
-                    y += 1
-                    for _i in range(5):
-                        for _i in range(5):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            x -= 1
-                        x += 5
-                        z -= 1
-                    x -= 1
-                    z += 2
-                    y += 1
-                    for _i in range(3):
-                        for _i in range(3):
-                            mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                            x -= 1
-                        x += 3
-                        z += 1
-                    z -= 2
-                    x -= 1
-                    y += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x += 2
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                    y += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x -= 1
-                    y += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x -= 1
-                    y += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x += 1
-                    y += 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x += 1
-                    y += 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                    y -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x += 1
-                    y -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x += 1
-                    y -= 1
-                    for _i in range(5):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y -= 1
-                    x -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    x -= 1
-                    y -= 1
-                    mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                    z += 1
-                    x -= 3
-                    for _i in range(9):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        y += 1
-                    x -= 4
-                    y -= 5
-                    for _i in range(9):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                    y += 3
-                    x -= 2
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x -= 1
-                        y -= 1
-                    y += 7
-                    x += 1
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.WHITE_CONCRETE)
-                        x += 1
-                        y -= 1
-                    z -= 1
-                    x -= 4
-                    y += 1
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        y += 1
-                    y -= 4
-                    x -= 3
-                    for _i in range(7):
-                        mc.setBlock(x, y, z, block.LIGHT_BLUE_CONCRETE)
-                        x += 1
-
+            file_name = "images/ピラミッド.litematic"
+# file_name = "images/Sample2.litematic"
+            X0, Y0, Z0 = x1, y1+63,z1
+            sleep(2)
+# Load the schematic and get its first region
+            schem = Schematic.load(file_name)
+            reg = list(schem.regions.values())[0]
+            size = scale 
+# x2, y2, z2 とかも、sizeと同期させる
+            X1, Y1, Z1 = 0, 0, 0
+            X2, Y2, Z2 = 0, 0, 0
+# Print out the basic shape
+            for z in reg.zrange():
+                X1, Y1, Z1 = 0, 0, 0
+                Z2+=size  
+                for y in reversed(list(reg.yrange())):
+                    Y2-=size
+                    for x in reg.xrange(): 
+                        b = reg.getblock(x, y, z)
+                        X1=0
+                        X2+=size
+                        for i in range(size):
+                            Y1=0
+                            for i in range(size):
+                                Z1=0
+                                for i in range(size): 
+                                    mc.setBlock(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
+                                    print(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
+                                    sleep(0.01)
+                                    Z1 +=1  
+                                Y1 +=1
+                            X1 +=1
+                    X2=0
+                Y2=0                
     if event.type == pygame.MOUSEBUTTONUP:
         x2 = 0
         y2 = 0
@@ -755,73 +473,8 @@ while running:
     
     pygame.display.flip()
 pygame.quit()
-print(x1,y1,z1,scale)
 
 
-from time import sleep
-
-from litemapy import Schematic, Region, BlockState
-
-from mc_remote.minecraft import Minecraft
-import param_mc_remote as param
-from param_mc_remote import PLAYER_ORIGIN as PO
-from param_mc_remote import block
-# Connect to minecraft and open a session as player with origin location
-mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
-mc.setPlayer(param.PLAYER_NAME, PO.x, PO.y, PO.z)
-
-mc.postToChat("LITEMAPY!!") 
-from time import sleep
-
-from litemapy import Schematic, Region, BlockState
-
-from mc_remote.minecraft import Minecraft
-import param_mc_remote as param
-from param_mc_remote import PLAYER_ORIGIN as PO
-from param_mc_remote import block
-
-# Connect to minecraft and open a session as player with origin location
-mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
-mc.setPlayer(param.PLAYER_NAME, PO.x, PO.y, PO.z)
-
-mc.postToChat("LITEMAPY!!") 
-
-
-# file_name = "sample.litematic"
-file_name = "images/ピラミッド.litematic"
-# file_name = "images/Sample2.litematic"
-X0, Y0, Z0 = x1, y1+63,z1
-sleep(2)
-# Load the schematic and get its first region
-schem = Schematic.load(file_name)
-reg = list(schem.regions.values())[0]
-size = scale 
-# x2, y2, z2 とかも、sizeと同期させる
-X1, Y1, Z1 = 0, 0, 0
-X2, Y2, Z2 = 0, 0, 0
-# Print out the basic shape
-for z in reg.zrange():
-    X1, Y1, Z1 = 0, 0, 0
-    Z2+=size  
-    for y in reversed(list(reg.yrange())):
-        Y2-=size
-        for x in reg.xrange(): 
-            b = reg.getblock(x, y, z)
-            X1=0
-            X2+=size
-            for i in range(size):
-                Y1=0
-                for i in range(size):
-                    Z1=0
-                    for i in range(size): 
-                        mc.setBlock(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
-                        print(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
-                        sleep(0.01)
-                        Z1 +=1  
-                    Y1 +=1
-                X1 +=1
-        X2=0
-    Y2=0                
 
 
 
