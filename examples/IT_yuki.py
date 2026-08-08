@@ -48,11 +48,11 @@ def select_file():
 x1 = 0
 y1 = 0
 z1 = 0
-scale = 1
+step = 1
 x2 = 0
 y2 = 0
 z2 = 0
-scale2 = 0
+step2 = 0
 mazix = 0
 maziy = 0
 maziz = 0
@@ -114,9 +114,9 @@ ylcd.init_row(X_ORG=12, Y_ORG=9.5, COL_INTV=6)
 zlcd = LCD_font_se(screen)
 zlcd.init_col(BLOCK_SIZE=13, BLOCK_INTV=13, COLOR_ON=BLACK, COLOR_OFF=BLUE)
 zlcd.init_row(X_ORG=12, Y_ORG=18, COL_INTV=6)
-scalelcd = LCD_font_se(screen)
-scalelcd.init_col(BLOCK_SIZE=8, BLOCK_INTV=8, COLOR_ON=BLACK, COLOR_OFF=BLUE)
-scalelcd.init_row(X_ORG=18, Y_ORG=46, COL_INTV=5.5)
+steplcd = LCD_font_se(screen)
+steplcd.init_col(BLOCK_SIZE=8, BLOCK_INTV=8, COLOR_ON=BLACK, COLOR_OFF=BLUE)
+steplcd.init_row(X_ORG=18, Y_ORG=46, COL_INTV=5.5)
 makelcd = LCD_font_se(screen)
 makelcd.init_col(BLOCK_SIZE=10, BLOCK_INTV=10, COLOR_ON=WHITE, COLOR_OFF=BLACK)
 makelcd.init_row(X_ORG=77, Y_ORG=47, COL_INTV=7)
@@ -129,9 +129,9 @@ suutiylcd.init_row(X_ORG=41.5, Y_ORG=16.5, COL_INTV=6)
 suutizlcd = LCD_font_se(screen)
 suutizlcd.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=BLACK, COLOR_OFF=BLUE)
 suutizlcd.init_row(X_ORG=41.5, Y_ORG=28.5, COL_INTV=6)
-suutiscalelcd = LCD_font_se(screen)
-suutiscalelcd.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=BLACK, COLOR_OFF=BLUE)
-suutiscalelcd.init_row(X_ORG=41.5, Y_ORG=40.5, COL_INTV=6)
+suutisteplcd = LCD_font_se(screen)
+suutisteplcd.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=BLACK, COLOR_OFF=BLUE)
+suutisteplcd.init_row(X_ORG=41.5, Y_ORG=40.5, COL_INTV=6)
 purasuxlcd = LCD_font_se(screen)
 purasuxlcd.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=BLACK, COLOR_OFF=BLUE)
 purasuxlcd.init_row(X_ORG=35.5, Y_ORG=4.5, COL_INTV=6)
@@ -169,11 +169,11 @@ signup3lcd.init_row(X_ORG=67, Y_ORG=35, COL_INTV=6)
 xlcd.update_col(col=0, code=63)
 ylcd.update_col(col=0, code=64)
 zlcd.update_col(col=0, code=65)
-scalelcd.update_col(col=0, code=58)
-scalelcd.update_col(col=1, code=42)
-scalelcd.update_col(col=2, code=40)
-scalelcd.update_col(col=3, code=51)
-scalelcd.update_col(col=4, code=44)
+steplcd.update_col(col=0, code=58)
+steplcd.update_col(col=1, code=42)
+steplcd.update_col(col=2, code=40)
+steplcd.update_col(col=3, code=51)
+steplcd.update_col(col=4, code=44)
 makelcd.update_col(col=0, code=52)
 makelcd.update_col(col=1, code=40)
 makelcd.update_col(col=2, code=50)
@@ -184,7 +184,8 @@ suutiylcd.update_col(col=1, code=y1/1%10)
 suutiylcd.update_col(col=0, code=y1/10%10)
 suutizlcd.update_col(col=1, code=z1/1%10)
 suutizlcd.update_col(col=0, code=z1/10%10)
-suutiscalelcd.update_col(col=1, code=scale/1%10)
+suutisteplcd.update_col(col=0, code=step/10%10)
+suutisteplcd.update_col(col=1, code=step/1%10)
 purasuxlcd.update_col(col=0, code=69)
 purasuylcd.update_col(col=0, code=69)
 purasuzlcd.update_col(col=0, code=69)
@@ -233,16 +234,7 @@ while running:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:   # 修正：pygame.K_SPACE → event.key == pygame.K_SPACE
-                print(f"a: ({mouse_x}, {mouse_y}, {x1}, {y1}, {z1}, {scale}, {priset1x}, {priset1y}, {priset1z}, {priset2x}, {priset2y}, {priset2z}, {priset3x}, {priset3y}, {priset3z}, {maru}, {priset1maru}, {priset2maru}, {priset3maru}, {priset1purasux}, {priset1purasuy}, {priset1purasuz}, {purasux}, {purasuy}, {purasuz})")
-
-            if event.key == pygame.K_o:
-                path = select_file()
-                if path:
-                    schem_path = path
-                    file_name = os.path.basename(path)
-                    schem = Schematic.load(schem_path)
-            # ==========================================
-
+                print(f"a: ({mouse_x}, {mouse_y}, {x1}, {y1}, {z1}, {step}, {priset1x}, {priset1y}, {priset1z}, {priset2x}, {priset2y}, {priset2z}, {priset3x}, {priset3y}, {priset3z}, {maru}, {priset1maru}, {priset2maru}, {priset3maru}, {priset1purasux}, {priset1purasuy}, {priset1purasuz}, {purasux}, {purasuy}, {purasuz})")
         if event.type == pygame.MOUSEBUTTONDOWN:
             if mouse_x > 480 and mouse_x < 565 and mouse_y > 30 and mouse_y < 110:
                 if x2 == 0:
@@ -311,17 +303,19 @@ while running:
                         suutizlcd.update_col(col=1, code=z1/1%10)
                         suutizlcd.update_col(col=0, code=z1/10%10)
             if mouse_x > 480 and mouse_x < 565 and mouse_y > 360 and mouse_y < 440:
-                if scale2 == 0:
-                    if scale < 3:
-                        scale = scale + 1
-                        scale2 = 1
-                        suutiscalelcd.update_col(col=1, code=scale/1%10)
+                if step2 == 0:
+                    if step < 99:
+                        step = step + 2
+                        step2 = 1
+                        suutisteplcd.update_col(col=0, code=step/10%10)
+                        suutisteplcd.update_col(col=1, code=step/1%10)
             if mouse_x > 35 and mouse_x < 120 and mouse_y > 360 and mouse_y < 440:
-                if scale2 == 0:
-                    if scale > 1:
-                        scale = scale - 1
-                        scale2 = 1
-                        suutiscalelcd.update_col(col=1, code=scale/1%10)
+                if step2 == 0:
+                    if step > 1:
+                        step = step - 2
+                        step2 = 1
+                        suutisteplcd.update_col(col=0, code=step/10%10)
+                        suutisteplcd.update_col(col=1, code=step/1%10)
             if mouse_x > 365 and mouse_x < 460 and mouse_y > 470 and mouse_y < 580:
                 if osita == 0:
                     if maru == 0:
@@ -384,7 +378,7 @@ while running:
                 suutiylcd.update_col(col=0, code=y1/10%10)
                 suutizlcd.update_col(col=1, code=z1/1%10)
                 suutizlcd.update_col(col=0, code=z1/10%10)
-                suutiscalelcd.update_col(col=1, code=scale/1%10)
+                suutisteplcd.update_col(col=1, code=step/1%10)
                 if maru == 0:
                     batsumarulcd.update_col(col=0, code=71)
                     air = 0
@@ -415,7 +409,7 @@ while running:
                 suutiylcd.update_col(col=0, code=y1/10%10)
                 suutizlcd.update_col(col=1, code=z1/1%10)
                 suutizlcd.update_col(col=0, code=z1/10%10)
-                suutiscalelcd.update_col(col=1, code=scale/1%10)
+                suutisteplcd.update_col(col=1, code=step/1%10)
                 if maru == 0:
                     batsumarulcd.update_col(col=0, code=71)
                     air = 0
@@ -446,7 +440,7 @@ while running:
                 suutiylcd.update_col(col=0, code=y1/10%10)
                 suutizlcd.update_col(col=1, code=z1/1%10)
                 suutizlcd.update_col(col=0, code=z1/10%10)
-                suutiscalelcd.update_col(col=1, code=scale/1%10)
+                suutisteplcd.update_col(col=1, code=step/1%10)
                 if maru == 0:
                     batsumarulcd.update_col(col=0, code=71)
                     air = 0
@@ -456,44 +450,38 @@ while running:
 
             # ==== 自動建築の実行部分（file_name → schem_path に変更） ====
             if mouse_x > 700 and mouse_x < 1100 and mouse_y > 460 and mouse_y < 560:
-                if schem_path:
-                    print(schem_path)  # 何も選ばれていなければ何もしない
-                    X0, Y0, Z0 = x1, y1+63, z1
-                    sleep(2)
-                    schem = Schematic.load(schem_path)
-                    reg = list(schem.regions.values())[0]
-                    size = scale
+                    size = step
+                    size3=size+1
+                    size5=size3/2
+                    size4=int(size5)
                     X1, Y1, Z1 = 0, 0, 0
                     X2, Y2, Z2 = 0, 0, 0
-                    for z in reg.zrange():
-                        X1, Y1, Z1 = 0, 0, 0
-                        Z2 += size
-                        for y in reversed(list(reg.yrange())):
-                                            Y2-=size
-                                            for x in reg.xrange(): 
-                                                b = reg.getblock(x, y, z)
-                                                X1=0
-                                                X2+=size
-                                                for i in range(size):
-                                                    Y1=0
-                                                    for i in range(size):
-                                                        Z1=0
-                                                        for i in range(size): 
-                                                            mc.setBlock(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
-                                                            print(X0+X1+X2, Y0 +Y1+Y2,Z0+Z1+Z2, b.id)
-                                                            sleep(0.01)
-                                                            Z1 +=1  
-                                                        Y1 +=1
-                                                    X1 +=1
-                                            X2=0
-                        Y2=0  
+                    #  size=11
+                    X=0-size+size4+mazix
+                    Y=63+maziy
+                    Z=0-size+size4+maziz
+                    size2=size
+                    for i in range(size2):
+                        X=0-size+size4+mazix
+                        for i in range(size2):
+                            Z=0-size+size4+maziz
+                            for i in range(size2):
+                                mc.setBlock(X,Y,Z, block.DIAMOND_BLOCK)
+                                print(X,Y,Z)
+                                print(y1)
+                                Z+=1
+                            X+=1
+                        Y+=1
+                        size-=1
+                        size2-=2
+                         
             # ================================================================
 
         if event.type == pygame.MOUSEBUTTONUP:
             x2 = 0
             y2 = 0
             z2 = 0
-            scale2 = 0
+            step2 = 0
             sakusei = 0
             osita = 0
 
@@ -515,12 +503,6 @@ while running:
     else:
         purasuzlcd.update_col(col=0, code=70)
         purasuz = 0
-
-    # ==== 選択中のファイル名を画面に表示（ここに追加） ====
-    pygame.draw.rect(screen, (100, 100, 255), Rect(100, 600, 1100, 40,))  # ← 追加：文字の背景だけ塗りつぶす
-    text_surface = font.render(f"選択中のファイル: {file_name}", True, WHITE)
-    screen.blit(text_surface, (100, 600))
-    # ====================================================
 
     pygame.display.flip()
 pygame.quit()

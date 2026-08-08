@@ -1,22 +1,27 @@
 # Litematica自動建築/ haruta0918
 
 
-中間発表用プレゼンテーション
+成果発表用プレゼンテーション
 --
 
 ## automatic architectureとは
-Litematicaから.litematicファイルを読み込み
+Litematicaという建築系MODから.litematicファイルを読み込み
 自動で建築するAPIを作る
 --
 
 ### automatic architectureの必要性
 （なぜ必要なのか）
-  Litematicaファイルから建築する方法はほかにもある
-　　　　　　　　　　　　　　　　　　　　　(WorldEditに.litematicファイルを入れてpasteする)
+  
+  自動建築する方法はほかにもある
+　　　　　　　　　　　
 
-→手間がかかりすぎる(もっと手軽に使いたい)
+(WorldEditを使用する、fillコマンド…)
+
+→・手間がかかりすぎる
+
+(もっと初心者でも使いやすい方法がほしい)
  
- サバイバル系のサーバーだと、wolrdEditを使えない
+ ・サバイバル系のサーバーだと、wolrdEditを使えない
 --
 
 
