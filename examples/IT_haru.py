@@ -373,7 +373,7 @@ while running:
                 suutizlcd.update_col(col=0, code=z1/10%10)
                 suutiscalelcd.update_col(col=1, code=scale/1%10)
 
-            # ==== 自動建築の実行部分（file_name → schem_path に変更） ====
+            # ==== 自動建築の実行部分 ====
             if mouse_x > 100 and mouse_x < 500 and mouse_y > 480 and mouse_y < 580:
                 if schem_path:
                     print(schem_path)  # 何も選ばれていなければ何もしない

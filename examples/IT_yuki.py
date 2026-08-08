@@ -466,7 +466,7 @@ while running:
                         for i in range(size2):
                             Z=0-size+size4+maziz
                             for i in range(size2):
-                                mc.setBlock(X,Y,Z, block.DIAMOND_BLOCK)
+                                mc.setBlock(X,Y,Z, block.AIR)
                                 print(X,Y,Z)
                                 print(y1)
                                 Z+=1
