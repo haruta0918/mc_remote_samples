@@ -118,7 +118,7 @@ size2 = 0
 for i in range(size):
     ...
     Y += 1
-    size -= 2
+    size -= 2　
     size2 += 1
 ```
 

@@ -9,35 +9,33 @@ Litematicaという建築系MODから.litematicファイルを読み込み
 自動で建築するAPIを作る
 --
 
-### automatic architectureの必要性
+## Litematicaについて
+![alt text](image-1.png)
+---
+
+### このAPIの必要性
 （なぜ必要なのか）
   
   自動建築する方法はほかにもある
 　　　　　　　　　　　
 
-(WorldEditを使用する、fillコマンド…)
+(WorldEditを使用する、クリエイティブ、fill…)
 
-→・手間がかかりすぎる
+→・元の建築物がなければwolrdEditを使えない
+・手間がかかりすぎる
 
 (もっと初心者でも使いやすい方法がほしい)
  
-・サバイバル系のサーバーだと、wolrdEditを使えない
+
 
 --
 
 
-### automatic architectureのカスタマイズ(API)のポイント
+### automatic architectureのカスタマイズポイント
 ・サイズの変更
 ・座標変更
 ・ファイルの切り替え
----
 
-
-
-
-### automatic architectureのメリット
-・建築の確認
-・建築のサイズ変更
 ---
 
 ### Litematica自動建築の詳しい仕組みの説明
@@ -93,11 +91,10 @@ if mouse_x > 100 and mouse_x < 500 and mouse_y > 480 and mouse_y < 580:
 
 ---
 
+### Thanks for listening!! 
+![alt text](images/ed6e1296bccb01351ad1074c9c9d09be_t.jpeg)
+---
 
 ### 実際の動画
 <video controls src="images/Video Project 2.mp4" title="Title"></video>
----
-
-### Thanks for listening!! 
-![alt text](images/ed6e1296bccb01351ad1074c9c9d09be_t.jpeg)
 ---
