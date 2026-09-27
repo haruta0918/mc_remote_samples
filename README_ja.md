@@ -1,4 +1,4 @@
-# Litematica自動建築/ haruta0918
+# IT KIDS卒業発表/ 9期生　齋藤晴太
 
 
 成果発表用プレゼンテーション
@@ -12,6 +12,11 @@ Litematicaという建築系MODから.litematicファイルを読み込み
 ## Litematicaについて
 ![alt text](image-1.png)
 ---
+
+![alt text](image-2.png)
+
+---
+
 
 ### このAPIの必要性
 （なぜ必要なのか）
